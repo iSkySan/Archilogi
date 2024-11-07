@@ -1,0 +1,10 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Context context = new Context(new PayByCreditCard());
+        context.pay(100);
+        context.changeStrategy(new PayByCash());
+        context.pay(200);
+        context.changeStrategy(new PayByPaypal());
+        context.pay(300);
+}}

@@ -1,0 +1,23 @@
+ public static void main(String[] args) {
+        LaPoste poste = new LaPoste();
+
+        Maison maison1 = new Maison("Maison 1");
+        Maison maison2 = new Maison("Maison 2");
+        Maison maison3 = new Maison("Maison 3");
+        Maison maison4 = new Maison("Maison 4");
+        Maison maison5 = new Maison("Maison 5");
+
+
+        poste.subscribe(maison1);
+        poste.subscribe(maison2);
+        poste.subscribe(maison3);
+        poste.subscribe(maison4);
+
+        Maison  maison6 = new Maison("Maison 6");
+        Maison maison7 = new Maison("Maison 7");
+        Maison maison8 = new Maison("Maison 8");
+        poste.subscribe(maison6);
+        poste.subscribe(maison7);
+
+        poste.publish("Hello, this is a test message!");
+    }

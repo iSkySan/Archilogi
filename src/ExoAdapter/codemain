@@ -1,0 +1,44 @@
+
+        // ------------------------------------------------------------------------------
+
+//        RoundHole hole = new RoundHole(10);
+//        RoundPeg roundPeg = new RoundPeg(9);
+//
+//        boolean doesFit = hole.fits(roundPeg);
+//        System.out.println(doesFit);
+//
+//        RoundPeg roundPeg2 = new RoundPeg(11);
+//        boolean doesFit2 = hole.fits(roundPeg2);
+//        System.out.println(doesFit2);
+//
+//
+//
+//        SquarePeg squarePeg = new SquarePeg(10);
+//        SquarePeg squarePeg2 = new SquarePeg(18);
+//
+//        SquarePegAdapter squarePegAdapter = new SquarePegAdapter(squarePeg);
+//        SquarePegAdapter squarePegAdapter2 = new SquarePegAdapter(squarePeg2);
+//
+//        boolean doesFit3 = hole.fits(squarePegAdapter);
+//        if (doesFit3)
+//        {
+//            System.out.println("le rectangle rentre");
+//
+//        }
+//        else {
+//            System.out.println("le rectangle ne rentre pas");
+//        }
+//
+//        boolean doesFit4 = hole.fits(squarePegAdapter2);
+//
+//        if (doesFit4)
+//        {
+//            System.out.println("le rectangle rentre");
+//
+//        }
+//        else {
+//            System.out.println("le rectangle ne rentre pas");
+//        }
+//
+
+//        ------------------------------------------------------------------------------

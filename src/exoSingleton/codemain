@@ -1,0 +1,7 @@
+//        exo1.Singleton instance = exo1.Singleton.getInstance();
+//        System.out.println(instance.GetMessage());
+//        instance.SetMessage("salut toi!");
+//        System.out.println(instance.GetMessage());
+//        exo1.Singleton anotherInstance = exo1.Singleton.getInstance();
+//        System.out.println(anotherInstance.GetMessage());
+

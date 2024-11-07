@@ -1,0 +1,37 @@
+    import java.util.ArrayList;
+    import java.util.HashSet;
+    import java.util.Vector;
+
+
+        public static void main(String[] args) {
+            ArrayList<String> list = new ArrayList<String>();
+            for (int i = 1; i <= 10; i++) {
+                list.add(String.valueOf(i));
+            }
+
+            Vector<String> vector = new Vector<String>();
+            for (int i = 1; i <= 15; i++) {
+                vector.add(String.valueOf(i));
+            }
+
+            HashSet<String> set = new HashSet<String>();
+            for (int i = 1; i <= 20; i++) {
+                set.add(String.valueOf(i));
+            }
+
+            System.out.println("ArrayList elements:");
+            afficheElements(list);
+
+            System.out.println("Vector elements:");
+            afficheElements(vector);
+
+            System.out.println("HashSet elements:");
+            afficheElements(set);
+        }
+
+
+    public static void afficheElements(Iterable<String> iterable) {
+        for (String s  : iterable) {
+            System.out.println(s);
+        }
+    }

@@ -1,0 +1,15 @@
+       // ------------------------------------------------------------------------------
+
+
+
+//        Circle circle = new Circle(20, 0, "blue", 5);
+//        Circle clonedCircle = (Circle) circle.clone();
+//        clonedCircle.setColor("red");
+//        System.out.println(circle);
+//        System.out.println(clonedCircle);
+//
+//        Rectangle rectangle = new Rectangle(25, 0, "green", 5, 5);
+//        Rectangle clonedRectangle = (Rectangle) rectangle.clone();
+//        clonedRectangle.setHeight(12);
+//        System.out.println(rectangle);
+//        System.out.println(clonedRectangle);

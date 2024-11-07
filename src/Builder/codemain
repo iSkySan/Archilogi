@@ -1,0 +1,22 @@
+
+//        MysqlQueryBuilder mysqlQueryBuilder = new MysqlQueryBuilder();
+//        String mysqlQuery = mysqlQueryBuilder.select("users", "name", "email")
+//                .where("age", ">", 18)
+//                .limit(10, 20)
+//                .Build();
+//        System.out.println("MySQL Query: " +mysqlQuery);
+//
+//        PostgresQueryBuilder postgresQueryBuilder = new PostgresQueryBuilder();
+//        String postgresQuery = postgresQueryBuilder.select("users", "name", "email")
+//                .where("age", ">", 18)
+//                .limit(10, 20)
+//                .Build();
+//        System.out.println("Postgres Query: "+postgresQuery);
+//
+//        MongoDBBuilder mongoDBBuilder = new MongoDBBuilder();
+//        String mongoDBQuery = mongoDBBuilder.select("users", "name", "email")
+//                .where("age", ">", 18)
+//                .limit(10, 20)
+//                .Build();
+//        System.out.println("MongoDB Query: "+mongoDBQuery);
+
