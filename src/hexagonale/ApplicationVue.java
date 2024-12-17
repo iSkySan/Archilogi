@@ -129,6 +129,10 @@ public class ApplicationVue {
         System.out.println("Liste des langues");
         System.out.println("-------------------");
         // TODO
+        List<LangueDTO> langues = rhDomaine.getAllLangue();
+        for (LangueDTO langue : langues) {
+            System.out.println("ID : " + langue.getId() + ", Nom : " + langue.getNom());
+        }
         System.out.println("-------------------");
 
         if (saisirMenuLangue()) {
@@ -147,12 +151,52 @@ public class ApplicationVue {
         switch (menu) {
             case "A":
                 // TODO
+                System.out.println("Saisissez le nom de la nouvelle langue :");
+                String nom = scanner.nextLine();
+                LangueDTO nouvelleLangue = new LangueDTO();
+                nouvelleLangue.setNom(nom);
+                try {
+                    rhDomaine.ajouterLangue(nouvelleLangue);
+                } catch (Exception e) {
+                    System.out.println("Erreur sur l'ajout d'une langue");
+                    System.out.println(e.getMessage());
+                }
                 break;
             case "M":
                 // TODO
+                System.out.println("Saisissez l'id de la langue à modifier (<Enter> pour annuler) :");
+                String val = scanner.nextLine();
+                if (!val.isBlank()) {
+                    try {
+                        int id = Integer.parseInt(val);
+                        LangueDTO langue = rhDomaine.getLangue(id);
+                        if (langue != null) {
+                            System.out.println("Modifiez le nom de la langue : '" + langue.getNom() + "' (<Enter> pour ne rien modifier)");
+                            String nomLangue = scanner.nextLine();
+                            if (!nomLangue.isBlank()) {
+                                langue.setNom(nomLangue);
+                            }
+                            rhDomaine.modifierLangue(langue);
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Erreur sur la modification de la langue avec l'id " + val);
+                        System.out.println(e.getMessage());
+                    }
+                }
                 break;
             case "S":
                 // TODO
+                System.out.println("Saisissez l'id de la langue à supprimer (<Enter> pour annuler) :");
+                String valSup = scanner.nextLine();
+                if (!valSup.isBlank()) {
+                    try {
+                        int id = Integer.parseInt(valSup);
+                        rhDomaine.supprimerLangue(id);
+                    } catch (Exception e) {
+                        System.out.println("Erreur sur la suppression de la langue avec l'id " + valSup);
+                        System.out.println(e.getMessage());
+                    }
+                }
                 break;
             case "X":
                 return false;
@@ -162,5 +206,75 @@ public class ApplicationVue {
 
     public void afficherPageService() {
         // TODO
+        System.out.println("Liste des services");
+        System.out.println("-------------------");
+        List<ServiceDTO> services = rhDomaine.getAllService();
+        for (ServiceDTO service : services) {
+            System.out.println("ID : " + service.getId() + ", Nom : " + service.getNom());
+        }
+        System.out.println("-------------------");
+    }
+
+    public boolean saisirMenuService() {
+        // TODO
+        System.out.println("Vous pouvez : ");
+        System.out.println("A) Ajouter un service");
+        System.out.println("M) Modifier un service");
+        System.out.println("S) Supprimer un service");
+        System.out.println("X) Revenir à la page d'accueil");
+        System.out.println("Que voulez-vous faire ? ");
+        String menu = scanner.nextLine().toUpperCase();
+        switch (menu) {
+            case "A":
+                System.out.println("Saisissez le nom du nouveau service :");
+                String nom = scanner.nextLine();
+                ServiceDTO nouveauService = new ServiceDTO();
+                nouveauService.setNom(nom);
+                try {
+                    rhDomaine.ajouterService(nouveauService);
+                } catch (Exception e) {
+                    System.out.println("Erreur sur l'ajout d'un service");
+                    System.out.println(e.getMessage());
+                }
+                break;
+            case "M":
+               System.out.println("Saisissez l'id du service à modifier (<Enter> pour annuler) :");
+                String val = scanner.nextLine();
+                if (!val.isBlank()) {
+                    try {
+                        int id = Integer.parseInt(val);
+                        ServiceDTO service = rhDomaine.getService(id);
+                        if (service != null) {
+                            System.out.println("Modifiez le nom du service : '" + service.getNom() + "' (<Enter> pour ne rien modifier)");
+                            String nomService = scanner.nextLine();
+                            if (!nomService.isBlank()) {
+                                service.setNom(nomService);
+                            }
+                            rhDomaine.modifierService(service);
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Erreur sur la modification du service avec l'id " + val);
+                        System.out.println(e.getMessage());
+                    }
+                }
+                break;
+            case "S":
+                System.out.println("Saisissez l'id du service à supprimer (<Enter> pour annuler) :");
+                String valSup = scanner.nextLine();
+                if (!valSup.isBlank()) {
+                    try {
+                        int id = Integer.parseInt(valSup);
+                        rhDomaine.supprimerService(id);
+                    } catch (Exception e) {
+                        System.out.println("Erreur sur la suppression du service avec l'id " + valSup);
+                        System.out.println(e.getMessage());
+                    }
+                }
+                break;
+            case "X":
+                return false;
+        }
+
+        return true;
     }
 }

@@ -70,4 +70,38 @@ public class RHDomaine {
     }
 
     // TODO
+    public List<LangueDTO> getAllLangue() {
+        return langueData.getAll();
+    }
+    public LangueDTO getLangue(int id) {
+        return langueData.get(id);
+    }
+
+    public List<ServiceDTO> getAllService() {
+        return serviceData.getAll();
+    }
+
+    public ServiceDTO getService(int id) {
+        return serviceData.get(id);
+    }
+
+    private void verifierService(ServiceDTO service) throws Exception{
+        if (service.getNom() == null || service.getNom().isBlank()) {
+            throw new Exception("Le nom est obligatoire !!!");
+        }
+    }
+
+    public void ajouterService(ServiceDTO nouveauService) throws Exception {
+        verifierService(nouveauService);
+        serviceData.add(nouveauService);
+    }
+
+    public void modifierService(ServiceDTO service) throws Exception {
+        verifierService(service);
+        serviceData.save(service);
+    }
+
+    public void supprimerService(int id) throws Exception{
+        serviceData.delete(id);
+    }
 }
